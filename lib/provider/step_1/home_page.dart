@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_management/provider/breadcrumb_provider.dart';
-import 'package:state_management/provider/breadcrumbs_widget.dart';
+import 'package:state_management/provider/step_1/breadcrumb_provider.dart';
+import 'package:state_management/provider/step_1/breadcrumbs_widget.dart';
 
 class ProviderHomePage extends StatelessWidget {
   const ProviderHomePage({super.key});

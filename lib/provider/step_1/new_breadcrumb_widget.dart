@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_management/provider/breadcrumb.dart';
-import 'package:state_management/provider/breadcrumb_provider.dart';
+import 'package:state_management/provider/step_1/breadcrumb.dart';
+import 'package:state_management/provider/step_1/breadcrumb_provider.dart';
 
 class NewBreadCrumbWidget extends StatefulWidget {
   const NewBreadCrumbWidget({super.key});
