@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:state_management/inherited_widget/dateTimeWidget.dart';
 import 'package:state_management/inherited_widget/provider.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class InheritedWidgetHomePage extends StatefulWidget {
+  const InheritedWidgetHomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<InheritedWidgetHomePage> createState() =>
+      _InheritedWidgetHomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _InheritedWidgetHomePageState extends State<InheritedWidgetHomePage> {
   ValueKey textKey = const ValueKey<String?>(null);
 
   @override
