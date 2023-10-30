@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_management/provider/step_2__display_provider_details/display_provider_details_home_page.dart';
-import 'package:state_management/provider/step_2__display_provider_details/object_provider.dart';
+import 'package:state_management/provider/step_3_multi_provider/minutes.dart';
+import 'package:state_management/provider/step_3_multi_provider/multi_provider_home_page.dart';
+import 'package:state_management/provider/step_3_multi_provider/seconds.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,9 +15,34 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     /// Provider main.dart file code
-    /// Step 2
+    /// Step 3 multi provider
 
-    return ChangeNotifierProvider(
+    return MaterialApp(
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: MultiProvider(
+        providers: [
+          StreamProvider.value(
+            value: Stream<Seconds>.periodic(
+                const Duration(seconds: 1), (value) => Seconds()),
+            initialData: Seconds(),
+          ),
+          StreamProvider.value(
+            value: Stream<Minutes>.periodic(
+                const Duration(minutes: 1), (value) => Minutes()),
+            initialData: Minutes(),
+          ),
+        ],
+        child: const MultiProviderHomePage(),
+      ),
+    );
+
+    /// Step 2 display provider details
+
+    /* return ChangeNotifierProvider(
       create: (_) => ObjectProvider(),
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -26,7 +52,7 @@ class MyApp extends StatelessWidget {
         ),
         home: const DisplayProviderDetailsHomePage(),
       ),
-    );
+    );*/
 
     /// Step 1
     /*return ChangeNotifierProvider(
